@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <title>ログイン</title>
+    </head>
+    <body>
+        <main>
+            <h2>ログイン</h2>
+            <div class="log-container">
+                <form method="post" action="/login">
+                    <div class="form-group">
+                        <p>ユーザー名</p>
+                        <input type="text" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <p>パスワード</p>
+                        <input type="password" name="password" id="input_pass" required>
+                        <div>
+                            <input type="checkbox" id="check_passview"></input>
+                            <label for="btn_passview">表示</label>
+                        </div>
+                    </div>
+                    <p>
+                        <input type="submit" value="login" class="log-button">
+                    </p>
+                </form>
+            </div>
+            <p><small>テストユーザー: testuser / パスワード: password123</small></p>
+        </main>
+        <script>
+            window.addEventListener('DOMContentLoaded',function(){
+
+                //パスワード欄とチェックボックスのHTMLを取得
+                const input_pass = document.getElementById("input_pass");
+                const toggleCheckbox = document.getElementById("check_passview");
+
+                toggleCheckbox.addEventListener("change", function() {
+
+                    if(this.checked){
+                        input_pass.type = 'text';
+                    } else {
+                        input_pass.type = 'password'
+                    } 
+                });
+            });
+        </script>
+    </body>
+</html>

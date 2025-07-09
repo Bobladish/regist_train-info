@@ -1,0 +1,142 @@
+body {
+    margin-right: auto;
+    margin-left: auto;
+    width: 700px;
+    background-color: #f4f4f4;
+}
+
+main {
+    width: auto;
+    text-align: center;
+}
+
+form {
+    display: inline-block;
+    text-align: left;
+}
+
+.log-button {
+    width: auto;
+    background-color: #333333;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 2px;
+    padding: 10px 40px;
+}
+
+.log-button:hover{
+    background-color: #696969;
+}
+
+.log-container {
+    width: auto;
+    background-color: #ffffff;
+}
+
+.log-container {
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px gray;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+input[type="checkbox"]{
+    position: relative;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #000;
+    vertical-align: -5px;
+    -webkit-appearance: none;
+        -moz-appearance: none;
+            appearance: none;
+}
+
+input[type="checkbox"]:checked:before {
+    position: absolute;
+    top: 1px;
+    left: 4px;
+    transform: rotate(50deg);
+    width: 4px;
+    height: 8px;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+    content: '';
+}
+
+.line-status-container {
+    width: 100%;
+    max-width: 750px; 
+    background-color: #dadada;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+
+}
+
+.line-status-container a{
+    color:#4682b4;
+    text-decoration: none;
+}
+
+.line-status-container a:hover{
+    color:#013d6e;
+    text-decoration: none;
+}
+
+
+
+.line-color-1 { border-left-color: #ff6347; } /* トマト色 */
+.line-color-2 { border-left-color: #4682b4; } /* スチールブルー */
+.line-color-3 { border-left-color: #32cd32; } /* ライムグリーン */
+.line-color-4 { border-left-color: #ffc107; } /* 黄色 */
+.line-color-5 { border-left-color: #6f42c1; } /* 紫 */
+
+
+.info-list {
+    font-size: 20px;
+}
+
+.time-info {
+    font-size: 15px;
+}
+
+.status-normal {
+    color: green;
+    font-weight: bold;
+}
+.status-trouble {
+    color: red;
+    font-weight: bold;
+}
+
+.dash-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+.checkbox-item label {
+    margin-left: 8px;
+}

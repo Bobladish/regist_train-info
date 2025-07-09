@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <title>路線登録</title>
+    </head>
+    <body>
+        <main>
+            <body>
+                <h2>路線登録</h2>
+                <p>（複数選択可能）</p>
+
+                <form method="POST" action="{{ url_for('add_my_line') }}">
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="selected_lines" value="JR四国|土讃線|https://transit.yahoo.co.jp/diainfo/512/512" id="route1">
+                        <label for="route1">JR四国:土讃線</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="selected_lines" value="JR西日本|山陽新幹線|https://transit.yahoo.co.jp/diainfo/8/0" id="route2">
+                        <label for="route2">JR西日本:山陽新幹線</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="selected_lines" value="JR東海|東海道新幹線|https://transit.yahoo.co.jp/diainfo/7/0" id="route3">
+                        <label for="route3">JR東海:東海道新幹線</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="selected_lines" value="JR九州|九州新幹線|https://transit.yahoo.co.jp/diainfo/410/0" id="route4">
+                        <label for="route4">JR九州:九州新幹線</label>
+                    </div>
+
+                    <br>
+                    <button type="submit" class="log-button">選択した路線を登録する</button>
+                    
+                </form>
+
+                <hr>
+                <a href="{{ url_for('dashboard') }}" class="log-button">ダッシュボードに戻る</a>
+            </body>
+        </main>
+    </body>
+</html>

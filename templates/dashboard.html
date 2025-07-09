@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>dashboard</title>
+</head>
+<body>
+    <main>
+        <h1>こんにちは、{{ username }}さん！</h1>
+        <p>ここはログインした人だけが見れるページです</p>
+
+        <h2>あなたが登録した路線</h2>
+        <h2 class="info-list">
+            ▷情報一覧
+            <span class="time-info">{{ update_time }} 更新</span>
+        </h2>
+        <div class="line-status-container">
+            {% if statuses %}
+                {% for status in statuses %}
+                    <div class="line-status-box">
+                        <h3 class="line-color-{{ status.id }}">{{ status.name }}</h3>
+                        
+                        <p class="status-message {{ 'status-trouble' if '遅延' in status.message else 'status-normal' }}">
+                            {{ status.message }}
+                        </p>
+
+                        {% if status.detail %}
+                            <div class="detail-info">
+                                <p><strong>詳細:</strong> {{ status.detail }}</p>
+                            </div>
+                        {% endif %}
+                        
+                        {% if status.info_url %}
+                            <a href="{{ status.info_url }}" class="official-link" target="_blank" rel="noopener noreferrer">公式サイトで確認</a>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>まだ路線は登録されていません。</p>
+            {% endif %}
+        </div>
+
+        <div class="dash-button">
+            <a href="{{ url_for('show_add_line_form') }}" class="log-button">路線登録</a>
+            <form action="{{ url_for('logout')}}" method="post">
+                <button type="submit" class="log-button">ログアウト</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
